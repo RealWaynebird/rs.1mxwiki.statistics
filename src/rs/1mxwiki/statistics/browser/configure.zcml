@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="rs.1mxwiki.statistics">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="rs.1mxwiki.statistics.interfaces.IRs1MxwikiStatisticsLayer"
+      />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="rs.1mxwiki.statistics"
+      directory="static"
+      />
+  
+  <browser:page
+   for="*"
+   name="PageCnt"
+   class="rs.1mxwiki.statistics.browser.PageCnt.PageCnt"
+   permission="zope2.View"
+   attribute="pagecnt"
+  />
+
+
+</configure>
