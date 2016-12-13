@@ -6,7 +6,7 @@ from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides
 
 class PageCnt(BrowserView):
-	def pagecnt(self,request):
+	def pagecnt(self, context, request):
 		alsoProvides(request, IDisableCSRFProtection)
  		catalog = getToolByName(self.context, 'portal_catalog')
  		results = catalog.searchResults({'portal_type': 'Document'})
