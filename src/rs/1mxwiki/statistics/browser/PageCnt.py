@@ -8,11 +8,6 @@ class PageCnt(BrowserView):
 		context = self.context
 		catalog = getToolByName(self.context, 'portal_catalog')
 		results = catalog.searchResults({'portal_type': 'Document'})
-		logger = logging.getLogger('statistics')		
-		lhdlr = logging.FileHandler('/opt/plone/zeocluster/var/zeoserver/statistics.log', filemode='w')
-		formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-		lhdlr.setFormatter(formatter)
- 		logger.addHandler(lhdlr)
-		logger.setLevel(logging.INFO)
-		logger.info(str(len(results)) + " Pages in the Plone")
+		logging.basicConfig(filename='/opt/plone/zeocluster/var/zeoserver/statistics.log', filemode='w', level=logging.INFO)
+		logging.info('%(asctime)s %(levelname)s' + str(len(results)) + " Pages in the Plone")
 
