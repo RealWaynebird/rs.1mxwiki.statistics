@@ -24,6 +24,13 @@
    permission="zope2.View"
    attribute="pagecnt"
   />
+    
+  <browser:page
+   for="*"
+   name="ShowLog"
+   class="rs.1mxwiki.statistics.browser-ShowLog.ShowLog"
+   permission="zope2.Public"
+  />              
 
 
 </configure>
