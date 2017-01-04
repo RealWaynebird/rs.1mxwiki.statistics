@@ -28,7 +28,7 @@
   <browser:page
    for="*"
    name="ShowLog"
-   class="rs.1mxwiki.statistics.browser-ShowLog.ShowLog"
+   class="rs.1mxwiki.statistics.browser.ShowLog.ShowLog"
    permission="zope2.Public"
   />              
 
