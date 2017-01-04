@@ -6,5 +6,5 @@ class ShowLog(BrowserView):
                 return
          
         def __call__(self):
-                with open('/opt/plone/zeocluster/var/zeoserver/statistics.log','r') as log
+                with open('/opt/plone/zeocluster/var/zeoserver/statistics.log','r') as log:
                         return log.read()
